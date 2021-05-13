@@ -1158,7 +1158,7 @@ if there are 2 channels, or have 2 columns if there is a single channel. Mat sho
 @param src Input gray-scale image @ref CV_8UC1; or input set of @ref CV_32S or @ref CV_32F
 2D points stored in Mat.
  */
-GAPI_EXPORTS GOpaque<Rect> boundingRect(const GMat& src);
+GAPI_EXPORTS_W GOpaque<Rect> boundingRect(const GMat& src);
 
 /** @overload
 
@@ -1168,7 +1168,7 @@ Calculates the up-right bounding rectangle of a point set.
 
 @param src Input 2D point set, stored in std::vector<cv::Point2i>.
  */
-GAPI_EXPORTS GOpaque<Rect> boundingRect(const GArray<Point2i>& src);
+GAPI_EXPORTS_W GOpaque<Rect> boundingRect(const GArray<Point2i>& src);
 
 /** @overload
 
@@ -1344,6 +1344,7 @@ Output image is 8-bit unsigned 3-channel image @ref CV_8UC3.
 GAPI_EXPORTS GMat BGR2RGB(const GMat& src);
 
 /** @brief Converts an image from RGB color space to gray-scaled.
+
 The conventional ranges for R, G, and B channel values are 0 to 255.
 Resulting gray color value computed as
 \f[\texttt{dst} (I)= \texttt{0.299} * \texttt{src}(I).R + \texttt{0.587} * \texttt{src}(I).G  + \texttt{0.114} * \texttt{src}(I).B \f]
@@ -1370,6 +1371,7 @@ Resulting gray color value computed as
 GAPI_EXPORTS GMat RGB2Gray(const GMat& src, float rY, float gY, float bY);
 
 /** @brief Converts an image from BGR color space to gray-scaled.
+
 The conventional ranges for B, G, and R channel values are 0 to 255.
 Resulting gray color value computed as
 \f[\texttt{dst} (I)= \texttt{0.114} * \texttt{src}(I).B + \texttt{0.587} * \texttt{src}(I).G  + \texttt{0.299} * \texttt{src}(I).R \f]
